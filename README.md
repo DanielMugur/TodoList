@@ -1,14 +1,6 @@
-# TODOs Coding Exercise
+# TODOs Code Base
 
-This is the TODOs coding exercise base solution. It contains a .NET server along with an Angular client. If you have Visual Studio 2022, feel free to use it, however all the exercises can be completed with **VS Code** or any text editor along with the `dotnet` and `ng` command line tools.
-
-## Prerequisites
-
-- Visual Studio 2022, Visual Studio Code, or any text editor [Download VS Code](https://code.visualstudio.com/)
-- .NET SDK [Download](https://dotnet.microsoft.com/download)
-- Node LTS [Download](https://nodejs.org/en/)
-
-## Using the command line interface
+This is the TODOs base solution. It contains a .NET server along with an Angular client.
 
 ### Install dependencies
 
