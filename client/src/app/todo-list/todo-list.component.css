@@ -1,0 +1,31 @@
+body {
+  margin: 10px;
+}
+
+.Todo-List-card{
+    width: 70%;
+    margin: 50px auto;
+    font: bold;
+}
+.header{
+    margin: 10px auto;
+}
+
+.NewTask-Button {
+  margin: 20px !important;
+}
+
+.Status-Button {
+  height: 35px;
+  width: fit-content;
+}
+
+.Pending-Button {
+  background-color: #ffd95ed2;
+  color: #000000;
+}
+
+.Completed-Button {
+  background-color: #86ff68d2;
+  color: #000000;
+}

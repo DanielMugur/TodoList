@@ -1,0 +1,50 @@
+body {
+  margin: 10px;
+
+}
+
+.Todo-List-card {
+  padding: 20px;
+  margin: auto;
+  font: bold;
+  height: 450px;
+}
+
+.btn {
+  margin: 10px !important;
+}
+
+.SaveButton{
+    background-color:#5bff16;
+    color:#000000;
+}
+
+.CreateButton{
+    right:auto;
+}
+
+.DiscardButton {
+  background-color: #ff8686;
+  color: #000000;
+}
+
+.mat-card-foot-buttons {
+  position: absolute;
+  left: 150px;
+  top: 450px;
+}
+
+.Task-container{
+    padding-bottom:10px;
+    padding-right: 25px;
+}
+
+.date-container {
+  padding-bottom: 10px;
+  padding-left: 25px;
+}
+
+.text-container {
+  padding-top: 10px;
+  width: 500px;
+}

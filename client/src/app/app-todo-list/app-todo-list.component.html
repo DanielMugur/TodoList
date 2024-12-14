@@ -1,0 +1,40 @@
+<mat-card appearance="outlined">
+  <mat-card-header class="mat-elevation-z1"><h4>New Task</h4></mat-card-header>
+  <mat-card-content class="Todo-List-card">
+    <form [formGroup]="formTask">
+
+      <mat-form-field class="Task-container">
+        <mat-label>Task</mat-label>
+        <input matInput formControlName="Task" required>
+        <mat-error *ngIf="hasTextError">
+          Please enter Task
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="date-container">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="DueDate" required>
+        <mat-error *ngIf="hasDateError">
+          Please select Date
+        </mat-error>
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="form-row">
+        <mat-form-field class="text-container">
+          <mat-label>Textarea</mat-label>
+          <textarea matInput formControlName="Notes"></textarea>
+        </mat-form-field>
+      </div>
+      <mat-card-footer class="mat-card-foot-buttons">
+        <div class="flex">
+          <button mat-flat-button class="btn CreateButton" *ngIf="isTaskNew == 0" (click)="CreateTask()">Create</button>
+          <button mat-flat-button class="btn SaveButton" *ngIf="isTaskNew != 0" (click)="SaveTask()">Save</button>
+          <button mat-flat-button class="btn DiscardButton" (click)="DiscardChange()">Discard</button>
+        </div>
+      </mat-card-footer>
+    </form>
+  </mat-card-content>
+</mat-card>

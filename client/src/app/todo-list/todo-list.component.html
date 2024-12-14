@@ -1,0 +1,68 @@
+<mat-card appearance="outlined" class="Todo-List-card">
+  <mat-card-header class="mat-elevation-z1"><h4>Todo List</h4></mat-card-header>
+  <mat-card-content>
+    <button mat-flat-button class="NewTask-Button" (click)="OpenDialogEmpty()">
+      New Task
+      <mat-icon aria-hidden="false">add</mat-icon>
+    </button>
+    <table mat-table [dataSource]="todoList" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Task">
+        <th mat-header-cell *matHeaderCellDef> Task </th>
+        <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dueDate">
+        <th mat-header-cell *matHeaderCellDef> Due Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.dueDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Notes">
+        <th mat-header-cell *matHeaderCellDef> Notes </th>
+        <td mat-cell *matCellDef="let element"> {{element.notes}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="isDone">
+        <th mat-header-cell *matHeaderCellDef> State </th>
+        <td mat-cell *matCellDef="let element">
+          <div *ngIf="element.isDone">
+            <button mat-fab extended class="Status-Button Completed-Button">
+              Compelted
+            </button>
+          </div>
+          <div *ngIf="!element.isDone">
+            <button mat-fab extended class="Status-Button Pending-Button">
+              Pending
+            </button>
+          </div>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="OpenDialogTodo(element)">
+            <mat-icon aria-hidden="false">edit</mat-icon>
+          </button>
+          <button mat-icon-button (click)="DeleteTask(element)">
+            <mat-icon aria-hidden="false">delete</mat-icon>
+          </button>
+          <button mat-icon-button *ngIf="!element.isDone" (click)="CompleteTask(element)">
+            <mat-icon aria-hidden="false">done</mat-icon>
+          </button>
+          <button mat-icon-button *ngIf="element.isDone" (click)="UnCompleteTask(element)">
+            <mat-icon aria-hidden="false">undone</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="TodoTableColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: TodoTableColumns;"></tr>
+    </table>
+  </mat-card-content>
+</mat-card>
