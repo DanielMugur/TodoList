@@ -360,4 +360,3 @@ appsettings.[Dd]evelopment.json
 
 # Ignore MicrosoftWord docuemnts
 *.docx
-/src/Todos/Todos.txt
